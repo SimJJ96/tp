@@ -1,22 +1,19 @@
 package seedu.fridgefriend.utilities;
 
 import java.util.logging.Level;
-import java.lang.Throwable;
+import java.util.logging.Logger;
 
 /**
  * Represents a logging object with name FridgeFriend.
  */
-public class Logger {
-    public static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger("FridgeFriend");
-
-    public static java.util.logging.Logger getLogger() {
-        return logger;
-    }
+public class LoggingHandler {
+    private static Logger logger = Logger.getLogger("FridgeFriend");
     
     /**
      * Logs a message at level INFO.
      */
     public static void logInfo(String message) {
+        logger.setLevel(Level.WARNING);
         logger.log(Level.INFO, message);
     }
 
@@ -24,6 +21,7 @@ public class Logger {
      * Logs a message at level INFO with an exception.
      */
     public static void logInfo(String message, Throwable e) {
+        logger.setLevel(Level.WARNING);
         logger.log(Level.INFO, message, e);
     }
 
